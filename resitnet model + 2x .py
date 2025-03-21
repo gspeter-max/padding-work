@@ -38,6 +38,14 @@ class restnet_classificaiton:
             self.kernel_size = self.kernel.shape[1]
 
         self.input_shape = input_shape
+    def Batchnormalization(self, input): 
+
+        ''' 
+        1st compute the mean and  std ( for each filter  becuase batchnormalization mean each filter and layer means each sample )
+        2st use normalization formula ( z_score, min-max)
+        and  do that 
+        ''' 
+        batch_mean = np.mean(input , axis = 0 )
 
     def conv2D(self,input = x_train , filter= 30 , stride = 1, padding = 'valid'):
 
